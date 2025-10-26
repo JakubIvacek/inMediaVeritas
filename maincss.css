@@ -15,9 +15,19 @@ body, html {
     height: 50px;
     margin-bottom: 20px;
 }
-.row > .col-md-8:nth-child(odd) {
+.row > .col-xl-6:nth-child(even) {
   margin-left: 0;        /* align left */
   margin-right: auto;
+}
+
+.row > .col-md-6:nth-child(odd) {
+  margin-left: auto;     /* align right */
+  margin-right: 0;
+}
+
+.row > .col-md-8:nth-child(even) {
+  margin-left: auto;     /* align right */
+  margin-right: 0;
 }
 
 .row > .col-md-8:nth-child(even) {
