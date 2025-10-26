@@ -1,0 +1,59 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+.gradient-bg h1 {
+    font-size: 3rem;
+}
+.logo {
+    height: 200px;
+}
+.logoFIIT{
+    height: 50px;
+    margin-bottom: 20px;
+}
+.row > .col-md-8:nth-child(odd) {
+  margin-left: 0;        /* align left */
+  margin-right: auto;
+}
+
+.row > .col-md-8:nth-child(even) {
+  margin-left: auto;     /* align right */
+  margin-right: 0;
+}
+.memberpic{
+  height: 200px
+}
+.planImg{
+  height:auto;
+  width: auto;
+  max-height: 650px;
+}
+.header{
+  background-color: #767497;
+}
+footer{
+  background-color: #767497;
+}
+.lightBg{
+  background-color: #F5F7FA;
+}
+hr {
+  border: 0;
+  height: 4px; /* slightly thicker */
+  background-color: #767497;
+  width: 90%;
+  margin: 1rem auto;
+  box-shadow: 0 0 10px 3px rgba(118, 116, 151, 0.7);
+  display: block;
+  border-radius: 2px; /* smooth edges */
+}
+
+.memberDescription {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;  /* keep text centered */
+}
