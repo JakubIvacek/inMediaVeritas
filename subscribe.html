@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inMediaVeritas – Subscribe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="maincss.css" rel="stylesheet">
+  <style>
+
+    .subscribe-hero {
+      padding: 80px 0 60px;
+    }
+    .subscribe-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+    }
+    .subscribe-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 540px;
+      margin: 0 auto;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    }
+    .subscribe-input {
+      border: 1.5px solid #ddd;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .subscribe-input:focus {
+      border-color: #111;
+    }
+    .subscribe-btn {
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: 1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.02em;
+    }
+    .subscribe-btn:hover {
+      background: #333;
+    }
+    .subscribe-btn:active {
+      transform: scale(0.98);
+    }
+    .subscribe-btn:disabled {
+      background: #999;
+      cursor: not-allowed;
+    }
+    .success-box {
+      display: none;
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      color: #166534;
+      font-weight: 600;
+    }
+    .error-msg {
+      display: none;
+      color: #dc2626;
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+    .perks {
+      max-width: 540px;
+      margin: 48px auto 0;
+    }
+    .perk-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .perk-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .perk-text strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .perk-text span {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .privacy-note {
+      font-size: 0.78rem;
+      color: #999;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    /* Collected emails display (demo) */
+    .emails-collected {
+      max-width: 540px;
+      margin: 40px auto 0;
+      display: none;
+    }
+    .emails-collected h6 {
+      font-weight: 700;
+      color: #555;
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .email-tag {
+      display: inline-block;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      color: #374151;
+      margin: 3px;
+    }
+  </style>
+</head>
+<body class="lightBg">
+
+  <!-- Navigation -->
+  <nav class="navbar-custom px-4 py-2 d-flex align-items-center justify-content-between">
+    <img src="imgs/logo_withText.svg" class="navbar-logo" alt="Logo">
+    <div class="d-flex gap-2">
+      <a href="index.html" class="nav-link-custom">Home</a>
+      <a href="team.html" class="nav-link-custom">Team</a>
+      <a href="subscribe.html" class="nav-link-custom active">Subscribe</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="container subscribe-hero text-center">
+    <p class="text-muted fw-semibold mb-2" style="letter-spacing:0.1em; font-size:0.85rem; text-transform:uppercase;">Stay in the loop</p>
+    <h1 class="fw-bold mb-3">Be First to Know the Truth</h1>
+    <p class="text-muted mx-auto" style="max-width:480px; font-size:1.05rem;">
+      Get updates on our development progress, beta access, and the fight against misinformation — straight to your inbox.
+    </p>
+  </div>
+
+  <!-- Subscribe Card -->
+  <div class="container pb-5">
+    <div class="subscribe-card">
+
+      <div id="form-area">
+        <label for="emailInput" class="fw-semibold mb-1 d-block" style="font-size:0.9rem;">Your email address</label>
+        <input
+          type="email"
+          id="emailInput"
+          class="subscribe-input mb-1"
+          placeholder="you@example.com"
+          autocomplete="email"
+        >
+        <div class="error-msg" id="errorMsg">Please enter a valid email address.</div>
+
+        <div class="mt-3">
+          <label class="fw-semibold mb-1 d-block" style="font-size:0.9rem;">I am a… <span class="fw-normal text-muted">(optional)</span></label>
+          <div class="d-flex flex-wrap gap-2" id="roleButtons">
+            <button type="button" class="role-btn btn btn-outline-secondary btn-sm rounded-pill" data-role="journalist">📰 Journalist</button>
+            <button type="button" class="role-btn btn btn-outline-secondary btn-sm rounded-pill" data-role="developer">💻 Developer</button>
+            <button type="button" class="role-btn btn btn-outline-secondary btn-sm rounded-pill" data-role="researcher">🔬 Researcher</button>
+            <button type="button" class="role-btn btn btn-outline-secondary btn-sm rounded-pill" data-role="curious">👀 Just curious</button>
+          </div>
+        </div>
+
+        <button class="subscribe-btn mt-4" id="subscribeBtn" onclick="handleSubscribe()">
+          Subscribe for Updates
+        </button>
+        <p class="privacy-note">🔒 No spam. No sharing. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="success-box" id="successBox">
+        ✅ You're on the list!<br>
+        <span style="font-weight:400; font-size:0.9rem;">We'll be in touch when there's something worth reading.</span>
+      </div>
+
+    </div>
+
+    <!-- Perks -->
+    <div class="perks">
+      <div class="perk-item">
+        <div class="perk-icon">🚀</div>
+        <div class="perk-text">
+          <strong>Early beta access</strong>
+          <span>Be among the first to test the platform before public launch.</span>
+        </div>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">📬</div>
+        <div class="perk-text">
+          <strong>Development updates</strong>
+          <span>Follow our progress on zkSNARKs, blockchain integration, and more.</span>
+        </div>
+      </div>
+      <div class="perk-item">
+        <div class="perk-icon">🗳️</div>
+        <div class="perk-text">
+          <strong>Shape the product</strong>
+          <span>Subscribers get invited to surveys that directly influence our roadmap.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collected emails list (shown after first submission, demo purposes) -->
+    <div class="emails-collected" id="emailsCollected">
+      <h6>Subscribers so far</h6>
+      <div id="emailTags"></div>
+    </div>
+  </div>
+
+  <footer class="row pt-2 mt-5">
+    <img src="imgs/logo.svg" class="logo" alt="Logo">
+    <img src="imgs/logo_fiit.svg" class="logoFIIT" alt="logoFIIT">
+  </footer>
+
+  <script>
+    // Role toggle
+    document.querySelectorAll('.role-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        btn.classList.toggle('btn-outline-secondary');
+        btn.classList.toggle('btn-dark');
+      });
+    });
+
+    // 👇 Sem vlož svoju Apps Script URL po deploymente
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzejMGVwHikMxp7TCDQVGEbUY7JVOJpMuhqxbr9DEfoiqcUWpE5AMdtYKp6NpAP2t_cnA/exec';
+
+    async function handleSubscribe() {
+      const input = document.getElementById('emailInput');
+      const errorMsg = document.getElementById('errorMsg');
+      const btn = document.getElementById('subscribeBtn');
+      const email = input.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      errorMsg.style.display = 'none';
+
+      if (!emailRegex.test(email)) {
+        errorMsg.textContent = 'Please enter a valid email address.';
+        errorMsg.style.display = 'block';
+        input.focus();
+        return;
+      }
+
+      // Get selected role
+      const activeRole = document.querySelector('.role-btn.btn-dark');
+      const role = activeRole ? activeRole.dataset.role : '—';
+
+      // Disable button while sending
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors', // required for Apps Script
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, role, source: 'website' })
+        });
+
+        // no-cors means we can't read the response, but no thrown error = success
+        document.getElementById('form-area').style.display = 'none';
+        document.getElementById('successBox').style.display = 'block';
+
+      } catch (err) {
+        errorMsg.textContent = 'Something went wrong. Please try again.';
+        errorMsg.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Subscribe for Updates';
+      }
+    }
+
+    // Allow Enter key to submit
+    document.getElementById('emailInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter') handleSubscribe();
+    });
+  </script>
+</body>
+</html>
