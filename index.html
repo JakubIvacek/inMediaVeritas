@@ -6,208 +6,139 @@
   <title>inMediaVeritas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="maincss.css" rel="stylesheet">
-  <style>
-    .navbar-custom {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-link-custom {
-      font-weight: 600;
-      color: #333;
-      text-decoration: none;
-      padding: 6px 16px;
-      border-radius: 8px;
-      transition: background 0.2s, color 0.2s;
-      font-size: 0.95rem;
-    }
-
-    .nav-link-custom:hover,
-    .nav-link-custom.active {
-      background: #111;
-      color: #fff;
-    }
-
-    .navbar-logo {
-      height: 55px;
-    }
-
-  </style>
 </head>
-<body class="lightBg">
+<body>
 
   <!-- Navigation -->
-  <nav class="navbar-custom px-4 py-2 d-flex align-items-center justify-content-between">
-    <img src="imgs/logo_withText.svg" class="navbar-logo" alt="Logo">
-    <div class="d-flex gap-2">
+  <nav class="navbar-custom">
+    <div class="nav-brand">
+      <img src="imgs/logo.svg" class="navbar-logo" alt="inMediaVeritas">
+      <span class="navbar-brand-text">inMediaVeritas</span>
+    </div>
+    <div class="nav-menu">
       <a href="index.html" class="nav-link-custom active">Home</a>
       <a href="team.html" class="nav-link-custom">Team</a>
-      <a href="subscribe.html" class="nav-link-custom">Subscribe</a>
+      <a href="subscribe.html" class="nav-subscribe-btn">Subscribe</a>
     </div>
   </nav>
 
-  <header class="row header pb-2 ">
-    <img src="imgs/logo_withText.svg" class="logo" alt="Logo">
-  </header>
-
-  <div class="container text-center pt-5">
-    <h1 class="fw-bold">Fake News? Never Again.</h1>
-    <div class="mx-auto mt-3" style="max-width: 600px;">
-      <p class="lead text-muted mt-4">
-        A decentralized application using zkSNARKs and blockchain technology to verify truth,
-        empower users, and fight misinformation.
-      </p>
+  <!-- Hero -->
+  <section class="hero">
+    <span class="eyebrow">Verifiable media infrastructure</span>
+    <h1>Truth you can prove,<br>not just trust.</h1>
+    <p>inMediaVeritas helps journalists, witnesses and newsrooms verify real-world media with privacy-preserving proofs and blockchain-backed credibility.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="#demo" class="btn-primary-custom">See proof of concept</a>
+      <a href="team.html" class="btn-secondary-custom">Meet the team</a>
     </div>
-  </div>
+  </section>
 
-  <hr class="mt-5 mb-5">
+  <hr class="divider">
 
-<!-- Desktop Version -->
-<div class="container d-none d-lg-block pb-5">
-  <div class="row ps-3 align-items-center">
-    <div class="col-md-5 col-12 justify-content-center text-start">
-      <h1 class="mb-1 mb-lg-3 mb-xl-5 fw-bold text-center">So what's our plan?</h1>
-
-      <div>
-        <h4 class="fw-semibold mt-4 mb-2">1. Reporters: Capture and Upload Media</h4>
-        <p>
-          Reporters or journalists with verified identity can securely upload photos, videos, and event details with proof of location directly to our decentralized file system.
-        </p>
-
-        <h4 class="fw-semibold mt-4 mb-2">2. Users: Witness, Verify, and Vote</h4>
-        <p>
-          Users who live in the area of the event can verify their identity and location privately using 
-          <strong>zk-SNARKs</strong> and submit 
-          <strong>testimonials</strong> to blockchain confirming the news or denying it. Their votes strengthen the credibility of the news,
-          ensuring truth is established or denied completely — not by algorithms or centralized authorities.
-        </p>
-
-        <h4 class="fw-semibold mt-4 mb-2">3. News Agencies and Public: Access Proven Truth</h4>
-        <p>
-          Once events are verified, <strong>news agencies</strong> can access and use trusted photos, videos, and testimonials (with applicable fees) directly 
-          from the decentralized file system. They can use these verified materials in their articles, ensuring transparency and accountability.
-        </p>
-        <p>
-          Readers and the public can view <strong>verified news articles</strong> and see transformation proofs if the original media was transformed — ensuring trust in every published event.
-        </p>
+  <!-- How it works -->
+  <section class="section text-center">
+    <span class="eyebrow">How it works</span>
+    <h2 class="section-title">Three steps to verified truth</h2>
+    <p class="section-subtitle">A simple flow connecting reporters, witnesses and newsrooms through privacy-preserving proofs.</p>
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="card-custom">
+            <div class="card-number">01</div>
+            <h3>Capture</h3>
+            <p>Verified reporters upload original media with location proof directly to our decentralized file system.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-custom">
+            <div class="card-number">02</div>
+            <h3>Verify</h3>
+            <p>Local witnesses confirm or dispute the event privately using zero-knowledge proofs, without revealing their identity.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-custom">
+            <div class="card-number">03</div>
+            <h3>Publish</h3>
+            <p>Newsrooms access trusted media and verification proofs — transparency and accountability baked in.</p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="col-md-7 col-12">
-      <img src="imgs/project_plan.jpg" class="img-fluid planImg" alt="Project plan">
-    </div>
-  </div>
-</div>
+  <hr class="divider">
 
-<!-- Mobile Version -->
-<div class="container-fluid d-lg-none pb-5">
-  <div class="row ps-3 align-items-center justify-content-center">
-    <div class="col-md-5 col-10 justify-content-center text-center">
-      <h1 class="mb-4 mb-lg-3 mb-xl-5 fw-bold">So what's our plan?</h1>
-
-      <div class="text-start">
-        <h4 class="fw-semibold mt-4 mb-2">1. Reporters: Capture and Upload Media</h4>
-        <p>
-          Reporters or journalists with verified identity can securely upload photos, videos, and event details with proof of location directly to our decentralized file system.
-        </p>
-
-        <h4 class="fw-semibold mt-4 mb-2">2. Users: Witness, Verify, and Vote</h4>
-        <p>
-          Users who live in the area of the event can verify their identity and location privately using 
-          <strong>zk-SNARKs</strong> and submit 
-          <strong>testimonials</strong> to blockchain confirming the news or denying it. Their votes strengthen the credibility of the news,
-          ensuring truth is established or denied completely — not by algorithms or centralized authorities.
-        </p>
-
-        <h4 class="fw-semibold mt-4 mb-2">3. News Agencies and Public: Access Proven Truth</h4>
-        <p>
-          Once events are verified, <strong>news agencies</strong> can access and use trusted photos, videos, and testimonials (with applicable fees) directly 
-          from the decentralized file system. They can use these verified materials in their articles, ensuring transparency and accountability.
-        </p>
-        <p>
-          Readers and the public can view <strong>verified news articles</strong> and see transformation proofs if the original media was transformed — ensuring trust in every published event.
-        </p>
+  <!-- See it in action -->
+  <section class="section" id="demo">
+    <div class="container">
+      <div class="row align-items-center g-5 justify-content-center">
+        <div class="col-12 col-md-5">
+          <span class="demo-badge">Proof of Concept</span>
+          <h2 class="section-title mt-1">See It In Action</h2>
+          <p>This short walkthrough shows our proof of concept in use, following the full flow through inMediaVeritas:</p>
+          <div class="demo-feature-list">
+            <div class="demo-feature-item"><span class="demo-feature-icon">🔐</span><span>Signing in and choosing a role</span></div>
+            <div class="demo-feature-item"><span class="demo-feature-icon">🪪</span><span>Generating and checking a zk-SNARK identity proof</span></div>
+            <div class="demo-feature-item"><span class="demo-feature-icon">📸</span><span>Capturing an event</span></div>
+            <div class="demo-feature-item"><span class="demo-feature-icon">✅</span><span>Submitting it for verification</span></div>
+            <div class="demo-feature-item"><span class="demo-feature-icon">🗳️</span><span>Voting on events</span></div>
+          </div>
+          <p class="demo-note">It's an early build, so expect rough edges — but blockchain proof verification and app integrations are fully working end to end.</p>
+        </div>
+        <div class="col-12 col-md-5">
+          <div class="demo-video-frame">
+            <video controls preload="metadata">
+              <source src="imgs/demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="col-md-7 col-10 mt-3 mt-md-0">
-      <img src="imgs/project_plan.jpg" class="img-fluid planImg" alt="Project plan">
-    </div>
-  </div>
-</div>
+  <hr class="divider">
 
-  <hr class="mt-5 mb-5">
-
-<!-- Demo Desktop Version -->
-<div class="container d-none d-lg-block pb-5">
-  <div class="row align-items-center justify-content-center">
-    <div class="col-md-5 col-12 text-start">
-      <div class="text-center">
-        <span class="demo-badge">Proof of Concept</span>
-      </div>
-      <h1 class="mb-3 fw-bold text-center">See It In Action</h1>
-      <p>
-        This short walkthrough shows our proof of concept in use, following the flow through inMediaVeritas:
-      </p>
-      <div class="demo-feature-list">
-        <div class="demo-feature-item"><span class="demo-feature-icon">🔐</span><span>Signing in and choosing a role</span></div>
-        <div class="demo-feature-item"><span class="demo-feature-icon">🪪</span><span>Generating and checking a zk-SNARK identity proof</span></div>
-        <div class="demo-feature-item"><span class="demo-feature-icon">📸</span><span>Capturing an event</span></div>
-        <div class="demo-feature-item"><span class="demo-feature-icon">✅</span><span>Submitting it for verification</span></div>
-        <div class="demo-feature-item"><span class="demo-feature-icon">🗳️</span><span>Voting on events</span></div>
-      </div>
-      <p class="demo-note">It's an early build, so expect rough edges on the UI — but the blockchain proof verification and our app integrations are fully working end to end.</p>
-    </div>
-
-    <div class="col-md-5 col-12">
-      <div class="demo-video-frame">
-        <video style="max-height:570px; max-width: 100%;" controls preload="metadata">
-          <source src="imgs/demo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+  <!-- Technical architecture -->
+  <section class="section text-center">
+    <div class="container">
+      <span class="eyebrow">Under the hood</span>
+      <h2 class="section-title">Technical architecture</h2>
+      <p class="section-subtitle">A privacy-preserving verification pipeline connecting reporters, witnesses and media agencies through zero-knowledge proofs and blockchain-backed credibility.</p>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+          <div class="arch-card">
+            <img src="imgs/project_plan.jpg" alt="Technical architecture diagram">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- Demo Mobile Version -->
-<div class="container-fluid d-lg-none pb-5">
-  <div class="row justify-content-center text-center">
-    <div>
-      <span class="demo-badge">Proof of Concept</span>
-    </div>
-    <h1 class="mb-4 fw-bold">See It In Action</h1>
-    <div class="col-10 text-start">
-      <p>
-        This short walkthrough shows our proof of concept in use, following the flow through inMediaVeritas:
-      </p>
-      <div class="demo-feature-list">
-        <div class="demo-feature-item"><span class="demo-feature-icon">🔐</span><span>Signing in and choosing a role</span></div>
-        <div class="demo-feature-item"><span class="demo-feature-icon">🪪</span><span>Generating and checking a zk-SNARK identity proof</span></div>
-        <div class="demo-feature-item"><span class="demo-feature-icon">📸</span><span>Capturing an event</span></div>
-        <div class="demo-feature-item"><span class="demo-feature-icon">✅</span><span>Submitting it for verification</span></div>
-        <div class="demo-feature-item"><span class="demo-feature-icon">🗳️</span><span>Voting on events</span></div>
-      </div>
-      <p class="demo-note">It's an early build, so expect rough edges on the UI — but the blockchain proof verification and our app integrations are fully working end to end.</p>
-    </div>
-    <div class="col-10">
-      <div class="demo-video-frame">
-        <video style="max-height:500px; max-width: 100%;" controls preload="metadata">
-          <source src="imgs/demo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </div>
-</div>
+  <hr class="divider">
 
-  <footer class="row pt-2 mt-5">
-    <img src="imgs/logo.svg" class="logo" alt="Logo">
-    <img src="imgs/logo_fiit.svg" class="logoFIIT" alt="logoFIIT">
+  <!-- Subscribe CTA -->
+  <section class="cta-section">
+    <span class="eyebrow">Stay close</span>
+    <h2>Stay close to the future<br>of verified media.</h2>
+    <p class="section-subtitle">Get beta access, development updates and early product insights.</p>
+    <a href="subscribe.html" class="btn-primary-custom">Get early access</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <img src="imgs/logo_withText.svg" class="footer-logo" alt="inMediaVeritas">
+      <p class="footer-tagline">Verifiable media infrastructure for a post-truth world.</p>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="team.html" class="footer-link">Team</a>
+        <a href="subscribe.html" class="footer-link">Subscribe</a>
+      </div>
+      <p class="footer-copy">© 2026 inMediaVeritas. All rights reserved.</p>
+    </div>
   </footer>
+
 </body>
 </html>
