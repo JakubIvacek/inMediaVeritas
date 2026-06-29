@@ -6,172 +6,110 @@
   <title>inMediaVeritas – Team</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="maincss.css" rel="stylesheet">
-    <style>
-    .navbar-custom {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-link-custom {
-      font-weight: 600;
-      color: #333;
-      text-decoration: none;
-      padding: 6px 16px;
-      border-radius: 8px;
-      transition: background 0.2s, color 0.2s;
-      font-size: 0.95rem;
-    }
-
-    .nav-link-custom:hover,
-    .nav-link-custom.active {
-      background: #111;
-      color: #fff;
-    }
-
-    .navbar-logo {
-      height: 55px;
-    }
-
-  </style>
 </head>
-<body class="lightBg">
+<body>
 
   <!-- Navigation -->
-  <nav class="navbar-custom px-4 py-2 d-flex align-items-center justify-content-between">
-    <img src="imgs/logo_withText.svg" class="navbar-logo" alt="Logo">
-    <div class="d-flex gap-2">
+  <nav class="navbar-custom">
+    <div class="nav-brand">
+      <img src="imgs/logo.svg" class="navbar-logo" alt="inMediaVeritas">
+      <span class="navbar-brand-text">inMediaVeritas</span>
+    </div>
+    <div class="nav-menu">
       <a href="index.html" class="nav-link-custom">Home</a>
       <a href="team.html" class="nav-link-custom active">Team</a>
-      <a href="subscribe.html" class="nav-link-custom">Subscribe</a>
+      <a href="subscribe.html" class="nav-subscribe-btn">Subscribe</a>
     </div>
   </nav>
 
-    <header class="row header pb-2 ">
-    <img src="imgs/logo_withText.svg" class="logo" alt="Logo">
-  </header>
+  <!-- Hero -->
+  <section class="hero">
+    <span class="eyebrow">The people behind inMediaVeritas</span>
+    <h1>Our Team</h1>
+    <p>A group of researchers, engineers and security experts building the future of verifiable media.</p>
+  </section>
 
-  <div class="row text-center pt-5">
-    <h1 class="fw-bold">The Team Behind the Project</h1>
-  </div>
+  <hr class="divider">
 
-  <div class="row pt-5">
-    <div class="col-12 col-md-8 col-xl-6 mb-xl-5 p-4">
-      <div class="text-center">
-        <img src="imgs/placeholderPic.svg" alt="Member 1" class="member-img mb-3 memberpic">
-        <h4 class="mb-2 fw-bold">doc. Ing. Ivan Homoliak, Ph.D.</h4>
-        <p class="mb-1 fw-bold memberDescription">Project Lead - guiding the team and overseeing development.</p>
-        <p class="mb-0 small memberDescription">
-          Holds a Ph.D. in adversarial intrusion detection from Brno University of Technology. 
-          His research focuses on blockchain security, cryptocurrency wallets, and consensus protocols. 
-          Previously worked at the Singapore University of Technology and Design on projects related to insider threat detection.
-        </p>
+  <!-- Team grid -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="team-card">
+            <img src="imgs/placeholderPic.svg" alt="Ivan Homoliak" class="member-img">
+            <p class="member-name">doc. Ing. Ivan Homoliak, Ph.D.</p>
+            <p class="member-role">Project Lead</p>
+            <p class="member-bio">Guiding the team and overseeing development. Ph.D. in adversarial intrusion detection, with research focused on blockchain security, cryptocurrency wallets and consensus protocols.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Blockchain</span>
+              <span class="skill-tag">Security</span>
+              <span class="skill-tag">Research</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="team-card">
+            <img src="imgs/placeholderPic.svg" alt="Richard Gazdík" class="member-img">
+            <p class="member-name">Richard Gazdík</p>
+            <p class="member-role">Consultant</p>
+            <p class="member-bio">Providing expert guidance and strategic advice on the project's direction and goals.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Strategy</span>
+              <span class="skill-tag">Advisory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="team-card">
+            <img src="imgs/placeholderPic.svg" alt="Jakub Ivácek" class="member-img">
+            <p class="member-name">Jakub Ivácek</p>
+            <p class="member-role">Full-stack & Data</p>
+            <p class="member-bio">Experienced with Vue, Laravel, Spring Boot and Apache Camel. Works as a programmer at CGI. Bachelor thesis in DNA data annotation.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Vue</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="team-card">
+            <img src="imgs/placeholderPic.svg" alt="Matúš Hrkeľ" class="member-img">
+            <p class="member-name">Matúš Hrkeľ</p>
+            <p class="member-role">Backend & Android</p>
+            <p class="member-bio">Java/Kotlin developer focused on backend systems for Android fintech POS solutions. Experienced with REST APIs, PostgreSQL and PCI DSS standards.</p>
+            <div class="skill-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Kotlin</span>
+              <span class="skill-tag">Android</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <div class="col-12 col-md-8 col-xl-6 p-4">
-      <div class="text-center">
-        <img src="imgs/placeholderPic.svg" alt="Member 2" class="member-img mb-3 memberpic">
-        <h4 class="mb-2 fw-bold">Richard Gazdík</h4>
-        <p class="mb-1 fw-bold memberDescription">Consultant – providing expert guidance and advice.</p>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <img src="imgs/logo_withText.svg" class="footer-logo" alt="inMediaVeritas">
+      <p class="footer-tagline">Verifiable media infrastructure for a post-truth world.</p>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="team.html" class="footer-link">Team</a>
+        <a href="subscribe.html" class="footer-link">Subscribe</a>
       </div>
+      <p class="footer-copy">© 2026 inMediaVeritas. All rights reserved.</p>
     </div>
-
-    <div class="col-12 col-md-8 col-xl-6 mb-xl-5 p-4">
-      <div class="text-center">
-        <img src="imgs/placeholderPic.svg" alt="Patrik Baran" class="member-img mb-3 memberpic">
-        <h4 class="mb-2 fw-bold">Patrik Baran</h4>
-        <p class="mb-1 fw-bold memberDescription">Team Member – backend & security enthusiast.</p>
-        <p class="mb-0 small memberDescription">
-          Focused on backend and cybersecurity, experienced with Python, Golang, Docker, and PostgreSQL. 
-          Worked on a statistical attack on a cryptographic algorithm as part of his bachelor thesis. 
-          Enjoys exploring new technologies and improving system security.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-8 col-xl-6 mb-xl-5 p-4">
-      <div class="text-center">
-        <img src="imgs/placeholderPic.svg" alt="Tomáš Tisovský" class="member-img mb-3 memberpic">
-        <h4 class="mb-2 fw-bold">Tomáš Tisovský</h4>
-        <p class="mb-1 fw-bold memberDescription">Team Member – AI & mobile developer.</p>
-        <p class="mb-0 small memberDescription">
-          Works with Flutter and cloud platforms such as Firebase and AWS, with a strong interest in backend systems. 
-          His bachelor thesis focused on image change detection using neural networks in Python and PyTorch. 
-          Passionate about AI and eager to learn emerging technologies.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-8 col-xl-6 mb-xl-5 p-4">
-      <div class="text-center">
-        <img src="imgs/placeholderPic.svg" alt="Jakub Ivácek" class="member-img mb-3 memberpic">
-        <h4 class="mb-2 fw-bold">Jakub Ivácek</h4>
-        <p class="mb-1 fw-bold memberDescription">Team Member – full-stack & data enthusiast.</p>
-        <p class="mb-0 small memberDescription">
-          Experienced with Vue, Laravel, Spring Boot, Apache Camel, and databases like PostgreSQL and SQLite and works as a programmer at CGI. 
-          His bachelor thesis involved DNA data annotation, combining software and genomics.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-8 col-xl-6 mb-xl-5 p-4">
-      <div class="text-center">
-        <img src="imgs/placeholderPic.svg" alt="Vojtech Babinský" class="member-img mb-3 memberpic">
-        <h4 class="mb-2 fw-bold">Vojtech Babinský</h4>
-        <p class="mb-1 fw-bold memberDescription">Team Member – backend & web developer.</p>
-        <p class="mb-0 small memberDescription">
-          Skilled with Laravel, React, and Docker, with experience in C# Blazor and Elm-based web apps. 
-          Enjoys both backend and frontend development and values clean, well-structured code. 
-          Always ready to learn and adapt to any technology the project requires.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-8 col-xl-6 mb-xl-5 p-4">
-      <div class="text-center">
-        <img src="imgs/placeholderPic.svg" alt="Tomáš Miština" class="member-img mb-3 memberpic">
-        <h4 class="mb-2 fw-bold">Tomáš Miština</h4>
-        <p class="mb-1 fw-bold memberDescription">Team Member – frontend & UI/UX developer.</p>
-        <p class="mb-0 small memberDescription">
-          Specializes in frontend development with React, Node.js, and MongoDB, and enjoys working on design and UX in Figma. 
-          Has professional experience with C# and WPF using the MVVM pattern. 
-          Interested in machine learning and data science, constantly expanding his skills.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-8 col-xl-6 p-4">
-      <div class="text-center">
-        <img src="imgs/placeholderPic.svg" alt="Matúš Hrkeľ" class="member-img mb-3 memberpic">
-        <h4 class="mb-2 fw-bold">Matúš Hrkeľ</h4>
-        <p class="mb-1 fw-bold memberDescription">Team Member – backend & Android developer.</p>
-        <p class="mb-0 small memberDescription">
-          Works as a Java/Kotlin developer focused on backend systems for Android fintech POS solutions. 
-          Experienced with REST APIs, PostgreSQL, and PCI DSS standards. 
-          Created a cybersecurity-themed game for his bachelor thesis and enjoys learning new tech challenges.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <hr class="mt-5 mb-5">
-
-  <div class="container pb-5 text-center">
-    <h1 class="pb-4 fw-bold">Our Team Together</h1>
-    <div class="row justify-content-center">
-      <div class="col-md-10 col-12">
-        <img src="imgs/teamPhoto.webp" class="img-fluid mx-auto d-block" alt="Team photo">
-      </div>
-    </div>
-  </div>
-
-  <footer class="row pt-2 mt-5">
-    <img src="imgs/logo.svg" class="logo" alt="Logo">
-    <img src="imgs/logo_fiit.svg" class="logoFIIT" alt="logoFIIT">
   </footer>
+
 </body>
 </html>
