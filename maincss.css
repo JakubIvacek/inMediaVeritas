@@ -72,7 +72,10 @@ p {
 }
 
 .navbar-logo {
-  height: 56px;
+  height: 60px;
+  width: 60px;
+  object-fit: none;
+  object-position: left center;
   filter: brightness(0) invert(1);
 }
 
@@ -241,23 +244,14 @@ p {
 }
 
 /* ── Architecture diagram ── */
-.arch-card {
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  overflow: hidden;
-  background: var(--surface);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
-  padding: 20px;
-}
-
-.arch-card img {
+.arch-img {
   width: 100%;
   height: auto;
   max-height: 700px;
   object-fit: contain;
   display: block;
-  opacity: 0.9;
-  border-radius: 14px;
+  border-radius: 20px;
+  opacity: 0.92;
 }
 
 /* ── Subscribe CTA section ── */
