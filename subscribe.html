@@ -20,9 +20,11 @@
     </button>
     <div class="nav-menu">
       <a href="index.html" class="nav-link-custom">Home</a>
+      <a href="index.html#how-it-works" class="nav-link-custom">How it works</a>
+      <a href="index.html#trust" class="nav-link-custom">Technology</a>
       <a href="team.html" class="nav-link-custom">Team</a>
-      <a href="https://github.com/InMediaVeritas/Documentation" class="nav-link-custom" target="_blank">Technical Docs</a>
-      <a href="subscribe.html" class="nav-subscribe-btn">Subscribe</a>
+      <a href="https://github.com/InMediaVeritas/Documentation" class="nav-link-custom" target="_blank">Docs</a>
+      <a href="subscribe.html" class="nav-subscribe-btn active">For newsrooms</a>
     </div>
   </nav>
   <script src="nav.js"></script>
@@ -51,25 +53,25 @@
 
         <div class="mt-4">
           <label class="subscribe-label mb-2">
-            I am a… <span style="font-weight: 400; color: var(--muted)">(optional)</span>
+            I am a… <span style="font-weight: 400; color: var(--ink-muted)">(optional)</span>
           </label>
           <div class="d-flex flex-wrap gap-2" id="roleButtons">
-            <button type="button" class="role-btn" data-role="journalist">📰 Journalist</button>
-            <button type="button" class="role-btn" data-role="developer">💻 Developer</button>
-            <button type="button" class="role-btn" data-role="researcher">🔬 Researcher</button>
-            <button type="button" class="role-btn" data-role="curious">👀 Just curious</button>
+            <button type="button" class="role-btn" data-role="journalist">Journalist</button>
+            <button type="button" class="role-btn" data-role="developer">Developer</button>
+            <button type="button" class="role-btn" data-role="researcher">Researcher</button>
+            <button type="button" class="role-btn" data-role="curious">Just curious</button>
           </div>
         </div>
 
         <button class="subscribe-btn mt-4" id="subscribeBtn" onclick="handleSubscribe()">
           Subscribe for Updates
         </button>
-        <p class="privacy-note">🔒 No spam. No sharing. Just meaningful updates.</p>
+        <p class="privacy-note">No spam. No sharing. Just meaningful updates.</p>
       </div>
 
       <div class="success-box" id="successBox">
         You're on the list!<br>
-        <span style="font-weight: 400; font-size: 0.9rem; color: var(--muted)">We'll be in touch when there's something worth reading.</span>
+        <span style="font-weight: 400; font-size: 0.9rem; color: var(--ink-muted)">We'll be in touch when there's something worth reading.</span>
       </div>
 
     </div>
@@ -77,21 +79,21 @@
     <!-- Perks -->
     <div class="perks">
       <div class="perk-item">
-        <div class="perk-icon">🚀</div>
+        <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg></div>
         <div class="perk-text">
           <strong>Early beta access</strong>
           <span>Be among the first to test the platform before public launch.</span>
         </div>
       </div>
       <div class="perk-item">
-        <div class="perk-icon">📬</div>
+        <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
         <div class="perk-text">
           <strong>Development updates</strong>
-          <span>Follow our progress on zkSNARKs, blockchain integration, and more.</span>
+          <span>Follow our progress on zk-SNARKs, blockchain integration, and more.</span>
         </div>
       </div>
       <div class="perk-item">
-        <div class="perk-icon">🗳️</div>
+        <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 3l-3 2M12 3l3 2"/><path d="M5 9h14l-1.5 8a3 3 0 0 1-3 2.5h-5a3 3 0 0 1-3-2.5L5 9z"/></svg></div>
         <div class="perk-text">
           <strong>Shape the product</strong>
           <span>Subscribers get invited to surveys that directly influence our roadmap.</span>
@@ -109,7 +111,7 @@
         <a href="index.html" class="footer-link">Home</a>
         <a href="team.html" class="footer-link">Team</a>
         <a href="https://github.com/InMediaVeritas/Documentation" class="footer-link" target="_blank">Technical Docs</a>
-        <a href="subscribe.html" class="footer-link">Subscribe</a>
+        <a href="subscribe.html" class="footer-link">For newsrooms</a>
       </div>
       <p class="footer-copy">© 2026 inMediaVeritas. All rights reserved.</p>
     </div>

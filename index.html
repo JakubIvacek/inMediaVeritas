@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>inMediaVeritas</title>
+  <title>inMediaVeritas — Verify news authenticity, cryptographically</title>
+  <meta name="description" content="inMediaVeritas commits media to IPFS and Ethereum on-chain records, then lets local witnesses confirm it with zero-knowledge proofs of eligibility — not editorial trust alone.">
+  <meta property="og:title" content="inMediaVeritas — Verify news authenticity, cryptographically">
+  <meta property="og:description" content="A verification layer for journalism, built on on-chain provenance records, IPFS and zk-SNARK witness eligibility proofs.">
+  <meta property="og:image" content="imgs/logo_withText.svg">
+  <meta property="og:type" content="website">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="maincss.css" rel="stylesheet">
 </head>
 <body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="navbar-custom">
@@ -20,114 +27,238 @@
     </button>
     <div class="nav-menu">
       <a href="index.html" class="nav-link-custom active">Home</a>
+      <a href="#who" class="nav-link-custom">Who it's for</a>
+      <a href="#how-it-works" class="nav-link-custom">How it works</a>
+      <a href="#trust" class="nav-link-custom">Technology</a>
       <a href="team.html" class="nav-link-custom">Team</a>
-      <a href="https://github.com/InMediaVeritas/Documentation" class="nav-link-custom" target="_blank">Technical Docs</a>
-      <a href="subscribe.html" class="nav-subscribe-btn">Subscribe</a>
+      <a href="https://github.com/InMediaVeritas/Documentation" class="nav-link-custom" target="_blank">Docs</a>
+      <a href="subscribe.html" class="nav-subscribe-btn">For newsrooms</a>
     </div>
   </nav>
   <script src="nav.js"></script>
 
-  <!-- Hero -->
-  <section class="hero">
-    <span class="eyebrow">Verifiable media infrastructure</span>
-    <h1>Truth you can prove,<br>not just trust.</h1>
-    <p>inMediaVeritas helps journalists, witnesses and news agencies verify real-world media with privacy-preserving proofs and blockchain-backed credibility.</p>
-    <div class="d-flex gap-3 justify-content-center flex-wrap">
-      <a href="#demo" class="btn-primary-custom">See proof of concept</a>
-      <a href="team.html" class="btn-secondary-custom">Meet the team</a>
-    </div>
-  </section>
+  <main id="main">
 
-  <hr class="divider">
+    <!-- Hero -->
+    <section class="hero">
+      <span class="eyebrow">Media provenance infrastructure</span>
+      <h1>Verify news authenticity,<br>cryptographically.</h1>
+      <p>inMediaVeritas commits media to IPFS and an on-chain record the moment it's captured, then has local witnesses confirm it — proving their eligibility to vote with zero-knowledge proofs, without revealing who they are, instead of asking you to simply trust the byline.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="#demo" class="btn-primary-custom">Try the verification demo</a>
+        <a href="subscribe.html" class="btn-secondary-custom">For newsrooms</a>
+      </div>
 
-  <!-- How it works -->
-  <section class="section text-center">
-    <span class="eyebrow">How it works</span>
-    <h2 class="section-title">Three steps to verified truth</h2>
-    <p class="section-subtitle">A simple flow connecting reporters, witnesses and news agencies through privacy-preserving proofs.</p>
-    <div class="container">
-      <div class="row g-4 justify-content-center">
-        <div class="col-12 col-md-4">
-          <div class="card-custom">
-            <div class="card-number">01</div>
-            <h3>Capture</h3>
-            <p>Verified reporters upload original media with location proof directly to our decentralized file system.</p>
-          </div>
+      <div class="trust-strip">
+        <span class="trust-strip-label">Built on peer-reviewed cryptography, not marketing claims</span>
+        <div class="tech-chips">
+          <span class="tech-chip">Groth16 / BN254 zk-SNARKs</span>
+          <span class="tech-chip">IPFS (Kubo)</span>
+          <span class="tech-chip">Ethereum smart contracts</span>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="card-custom">
-            <div class="card-number">02</div>
-            <h3>Verify</h3>
-            <p>Local witnesses confirm or dispute the event privately using zero-knowledge proofs, without revealing their identity.</p>
+        <a href="https://github.com/InMediaVeritas/Documentation" class="paper-link" target="_blank">Paper submitted to IEEE BRAINS 2026 →</a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Who it's for -->
+    <section class="section text-center" id="who">
+      <span class="eyebrow">Who's involved</span>
+      <h2 class="section-title">Three roles, one verification record</h2>
+      <p class="section-subtitle mx-auto">Reporters, local witnesses and news agencies each play a distinct part — no single one of them decides what's true alone.</p>
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-4">
+            <div class="card-custom">
+              <div class="card-number">Reporters</div>
+              <h3>Field reporters</h3>
+              <p>Capture original media on the ground and submit it with a cryptographic hash and a zero-knowledge identity proof, the moment a story happens.</p>
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card-custom">
-            <div class="card-number">03</div>
-            <h3>Publish</h3>
-            <p>News agencies access trusted media and verification proofs — transparency and accountability baked in.</p>
+          <div class="col-12 col-md-4">
+            <div class="card-custom">
+              <div class="card-number">Local witnesses</div>
+              <h3>People near the event</h3>
+              <p>Confirm or dispute what happened by voting on-chain, deduplicated by a credential-derived hash so no one votes twice. Fully anonymous, location-bound proofs for witnesses are proven in the circuits and next on the roadmap to reach the app.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card-custom">
+              <div class="card-number">News agencies</div>
+              <h3>Editors &amp; newsrooms</h3>
+              <p>Review provenance and witness consensus before publishing. A subscription to a stream of verified stories is planned, not yet live.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <hr class="divider">
+    <hr class="divider">
 
-  <!-- Technical architecture -->
-  <section class="section text-center">
-    <div class="container">
-      <span class="eyebrow">Under the hood</span>
-      <h2 class="section-title">Technical architecture</h2>
-      <p class="section-subtitle">A privacy-preserving verification pipeline connecting reporters, witnesses and media agencies through zero-knowledge proofs and blockchain-backed credibility.</p>
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10">
-          <img src="imgs/arch_darker.png" class="arch-img" alt="Technical architecture diagram">
+    <!-- How it works -->
+    <section class="section text-center" id="how-it-works">
+      <span class="eyebrow">How verification works</span>
+      <h2 class="section-title">From story to on-chain proof</h2>
+      <p class="section-subtitle mx-auto">Four steps connect a reporter's original media to a public, tamper-evident record — understandable at a glance, verifiable by anyone.</p>
+
+      <div class="flow-diagram">
+        <div class="flow-step">
+          <span class="flow-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          </span>
+          <span class="flow-step-index">Step 01</span>
+          <h3>Capture &amp; hash</h3>
+          <p>A reporter submits the original article or media. It's fingerprinted with a cryptographic hash the moment it's captured.</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+          </span>
+          <span class="flow-step-index">Step 02</span>
+          <h3>Pin to IPFS</h3>
+          <p>The content and its hash are pinned to IPFS. Its content ID is a self-verifying fingerprint — anyone can confirm the file matches, no matter who serves it.</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <span class="flow-step-index">Step 03</span>
+          <h3>Generate a zk-proof</h3>
+          <p>A Groth16 zk-SNARK proves the sender holds a valid, authority-issued credential — without revealing who they are.</p>
+        </div>
+        <div class="flow-step">
+          <span class="flow-step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="8" rx="1.5"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/><circle cx="12" cy="14" r="1.4"/></svg>
+          </span>
+          <span class="flow-step-index">Step 04</span>
+          <h3>Commit on-chain</h3>
+          <p>The proof and record are written to an Ethereum-compatible smart contract — checkable by any reader, running today on a local test chain as the proof-of-concept moves toward public deployment.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <hr class="divider">
+    <hr class="divider">
 
-  <!-- See it in action -->
-  <section class="section" id="demo">
-    <div class="container">
-      <div class="row align-items-center g-5 justify-content-center">
-        <div class="col-12 col-md-5">
-          <span class="demo-badge">Proof of Concept</span>
-          <h2 class="section-title mt-1">See It In Action</h2>
-          <p>This short walkthrough shows our proof of concept in use, following the full flow through inMediaVeritas:</p>
-          <div class="demo-feature-list">
-            <div class="demo-feature-item"><span class="demo-feature-icon">🔐</span><span>Signing in and choosing a role</span></div>
-            <div class="demo-feature-item"><span class="demo-feature-icon">🪪</span><span>Generating a zk-SNARK identity proof</span></div>
-            <div class="demo-feature-item"><span class="demo-feature-icon">📸</span><span>Capturing an event</span></div>
-            <div class="demo-feature-item"><span class="demo-feature-icon">✅</span><span>Submitting it for verification</span></div>
-            <div class="demo-feature-item"><span class="demo-feature-icon">🗳️</span><span>Voting on events</span></div>
-          </div>
-          <p class="demo-note">It's an early build, so expect rough edges — but blockchain proof verification and app integrations are fully working end to end.</p>
+    <!-- Trust signals -->
+    <section class="section" id="trust">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">Verifiable, not just claimed</span>
+          <h2 class="section-title">Why you don't have to take our word for it</h2>
+          <p class="section-subtitle mx-auto">Every claim here is checkable: the paper, the documentation, and the exact cryptography in use.</p>
         </div>
-        <div class="col-12 col-md-5">
-          <div class="demo-video-frame">
-            <video controls preload="metadata">
-              <source src="imgs/demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+
+        <div class="trust-grid">
+          <div class="trust-panel">
+            <h3>Technical specification</h3>
+            <ul class="spec-list">
+              <li><span class="spec-key">Proof system</span><span class="spec-val">Groth16 zk-SNARK</span></li>
+              <li><span class="spec-key">Proving curve</span><span class="spec-val">BN254</span></li>
+              <li><span class="spec-key">In-circuit curve</span><span class="spec-val">Baby Jubjub</span></li>
+              <li><span class="spec-key">Content storage</span><span class="spec-val">IPFS · Kubo</span></li>
+              <li><span class="spec-key">Verification layer</span><span class="spec-val">Ethereum smart contracts</span></li>
+              <li><span class="spec-key">Witness identity</span><span class="spec-val">Never revealed on-chain</span></li>
+            </ul>
+            <p class="trust-note">No proprietary black box: the same primitives used in production zk-rollups, applied to media provenance instead of transactions.</p>
+          </div>
+
+          <div class="trust-links">
+            <a href="https://github.com/InMediaVeritas/Documentation" class="trust-link-item" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M6 3h8l5 5v13H6z"/><path d="M9 13h6M9 17h6M9 9h2"/></svg>
+              <span>
+                <span class="trust-link-title">Documentation &amp; paper</span>
+                <span class="trust-link-sub">Technical docs and the IEEE BRAINS 2026 submission</span>
+              </span>
+            </a>
+            <a href="team.html" class="trust-link-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+              <span>
+                <span class="trust-link-title">Meet the team</span>
+                <span class="trust-link-sub">Security researchers and engineers behind the protocol</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <hr class="divider">
+    <hr class="divider">
 
-  <!-- Subscribe CTA -->
-  <section class="cta-section">
-    <span class="eyebrow">Stay close</span>
-    <h2>Stay close to the future<br>of verified media.</h2>
-    <p class="section-subtitle">Get beta access, development updates and early product insights.</p>
-    <a href="subscribe.html" class="btn-primary-custom">Get early access</a>
-  </section>
+    <!-- Technical architecture -->
+    <section class="section text-center">
+      <div class="container">
+        <span class="eyebrow">Under the hood</span>
+        <h2 class="section-title">System architecture</h2>
+        <p class="section-subtitle mx-auto">The full path from reporter and witness to published article and public reader — including where zero-knowledge proofs and on-chain records fit in.</p>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10">
+            <div class="arch-panel">
+              <img src="imgs/archwhite.png" class="arch-img" alt="Diagram showing the inMediaVeritas verification pipeline: a reporter and local witness submit media and proofs to content-addressed IPFS storage and an Ethereum-compatible verification chain, which a newsroom reviews before publishing an article with attached proofs for public readers to verify.">
+              <p class="arch-caption">fig. 1 — reporter/witness capture → IPFS storage &amp; on-chain proof record → newsroom review → published article with attached proofs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- See it in action -->
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="row align-items-center g-5 justify-content-center">
+          <div class="col-12 col-md-5">
+            <span class="demo-badge">Proof of concept</span>
+            <h2 class="section-title mt-1">See it in action</h2>
+            <p>This short walkthrough follows the full flow through inMediaVeritas, end to end:</p>
+            <div class="demo-feature-list">
+              <div class="demo-feature-item">
+                <span class="demo-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                <span>Signing in and choosing a role</span>
+              </div>
+              <div class="demo-feature-item">
+                <span class="demo-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"/></svg></span>
+                <span>Generating a zk-SNARK identity proof</span>
+              </div>
+              <div class="demo-feature-item">
+                <span class="demo-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l4.5-4.5L12 16l3-3 5 5"/></svg></span>
+                <span>Capturing an event</span>
+              </div>
+              <div class="demo-feature-item">
+                <span class="demo-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg></span>
+                <span>Submitting it for verification</span>
+              </div>
+              <div class="demo-feature-item">
+                <span class="demo-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 3l-3 2M12 3l3 2"/><path d="M5 9h14l-1.5 8a3 3 0 0 1-3 2.5h-5a3 3 0 0 1-3-2.5L5 9z"/></svg></span>
+                <span>Voting on events as a witness</span>
+              </div>
+            </div>
+            <p class="demo-note">It's an early build, so expect rough edges — but identity proof generation, on-chain event creation and proof verification are fully working end to end.</p>
+          </div>
+          <div class="col-12 col-md-5">
+            <div class="demo-video-frame">
+              <video controls preload="metadata" poster="imgs/logo.png">
+                <source src="imgs/demo.mp4" type="video/mp4">
+                Your browser does not support the video tag. <a href="imgs/demo.mp4">Download the demo instead</a>.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Subscribe CTA -->
+    <section class="cta-section">
+      <span class="eyebrow">For newsrooms</span>
+      <h2>Reduce verification time.<br>Increase confidence before publishing.</h2>
+      <p class="section-subtitle mx-auto">Get pilot access, technical updates and early product insights for your newsroom.</p>
+      <a href="subscribe.html" class="btn-primary-custom">Get early access</a>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -136,9 +267,10 @@
       <p class="footer-tagline">Verifiable media infrastructure for a post-truth world.</p>
       <div class="footer-links">
         <a href="index.html" class="footer-link">Home</a>
+        <a href="#how-it-works" class="footer-link">How it works</a>
         <a href="team.html" class="footer-link">Team</a>
         <a href="https://github.com/InMediaVeritas/Documentation" class="footer-link" target="_blank">Technical Docs</a>
-        <a href="subscribe.html" class="footer-link">Subscribe</a>
+        <a href="subscribe.html" class="footer-link">For newsrooms</a>
       </div>
       <p class="footer-copy">© 2026 inMediaVeritas. All rights reserved.</p>
     </div>
