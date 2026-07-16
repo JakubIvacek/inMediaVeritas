@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t !== 'dark' && t !== 'light') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>inMediaVeritas — Verify news authenticity, cryptographically</title>
   <meta name="description" content="inMediaVeritas commits media to IPFS and Ethereum on-chain records, then lets local witnesses confirm it with zero-knowledge proofs of eligibility — not editorial trust alone.">
@@ -19,23 +28,31 @@
   <!-- Navigation -->
   <nav class="navbar-custom">
     <div class="nav-brand">
-      <img src="imgs/logo.svg" class="navbar-logo" alt="inMediaVeritas">
+      <img src="imgs/logo.svg" class="navbar-logo theme-logo-light" alt="inMediaVeritas">
+      <img src="imgs/logo-on-dark.png" class="navbar-logo theme-logo-dark" alt="inMediaVeritas">
       <span class="navbar-brand-text">inMediaVeritas</span>
     </div>
-    <button class="nav-hamburger" id="navHamburger" onclick="toggleNav()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-menu">
-      <a href="index.html" class="nav-link-custom active">Home</a>
-      <a href="#who" class="nav-link-custom">Who it's for</a>
-      <a href="#how-it-works" class="nav-link-custom">How it works</a>
-      <a href="#trust" class="nav-link-custom">Technology</a>
-      <a href="team.html" class="nav-link-custom">Team</a>
-      <a href="https://github.com/InMediaVeritas/Documentation" class="nav-link-custom" target="_blank">Docs</a>
-      <a href="subscribe.html" class="nav-subscribe-btn">For newsrooms</a>
+    <div class="nav-right">
+      <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link-custom active first-link">Home</a>
+        <a href="#who" class="nav-link-custom">Who it's for</a>
+        <a href="#how-it-works" class="nav-link-custom">How it works</a>
+        <a href="#trust" class="nav-link-custom">Technology</a>
+        <a href="team.html" class="nav-link-custom">Team</a>
+        <a href="https://github.com/InMediaVeritas/Documentation" class="nav-link-custom" target="_blank">Docs</a>
+        <a href="subscribe.html" class="nav-subscribe-btn">Subscribe</a>
+      </div>
     </div>
   </nav>
   <script src="nav.js"></script>
+  <script src="theme.js"></script>
 
   <main id="main">
 
@@ -194,7 +211,8 @@
         <div class="row justify-content-center">
           <div class="col-12 col-md-10">
             <div class="arch-panel">
-              <img src="imgs/archwhite.png" class="arch-img" alt="Diagram showing the inMediaVeritas verification pipeline: a reporter and local witness submit media and proofs to content-addressed IPFS storage and an Ethereum-compatible verification chain, which a newsroom reviews before publishing an article with attached proofs for public readers to verify.">
+              <img src="imgs/archwhite.png" class="arch-img arch-img-light" alt="Diagram showing the inMediaVeritas verification pipeline: a reporter and local witness submit media and proofs to content-addressed IPFS storage and an Ethereum-compatible verification chain, which a newsroom reviews before publishing an article with attached proofs for public readers to verify.">
+              <img src="imgs/arch_darker.png" class="arch-img arch-img-dark" alt="Diagram showing the inMediaVeritas verification pipeline: a reporter and local witness submit media and proofs to content-addressed IPFS storage and an Ethereum-compatible verification chain, which a newsroom reviews before publishing an article with attached proofs for public readers to verify.">
               <p class="arch-caption">fig. 1 — reporter/witness capture → IPFS storage &amp; on-chain proof record → newsroom review → published article with attached proofs</p>
             </div>
           </div>
@@ -263,7 +281,8 @@
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <img src="imgs/logo_withText.svg" class="footer-logo" alt="inMediaVeritas">
+      <img src="imgs/logo_withText.svg" class="footer-logo theme-logo-light" alt="inMediaVeritas">
+      <img src="imgs/logo_withText-on-dark.png" class="footer-logo theme-logo-dark" alt="inMediaVeritas">
       <p class="footer-tagline">Verifiable media infrastructure for a post-truth world.</p>
       <div class="footer-links">
         <a href="index.html" class="footer-link">Home</a>

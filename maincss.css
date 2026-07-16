@@ -13,12 +13,34 @@
   --line: rgba(32, 28, 22, .14);
   --line-soft: rgba(32, 28, 22, .08);
   --shadow: rgba(32, 24, 12, .12);
+  --nav-bg: rgba(246, 241, 231, 0.9);
+  --nav-bg-solid: rgba(246, 241, 231, 0.98);
+}
+
+:root[data-theme="dark"] {
+  --paper: #16140f;
+  --paper-soft: #1d1b15;
+  --surface: #211f18;
+  --ink: #f1ece0;
+  --ink-muted: #b7ae9c;
+  --ink-faint: #837c6d;
+  --accent: #6fa1cf;
+  --accent-strong: #9cc3e6;
+  --accent-wash: rgba(111, 161, 207, .12);
+  --line: rgba(241, 236, 224, .14);
+  --line-soft: rgba(241, 236, 224, .08);
+  --shadow: rgba(0, 0, 0, .4);
+  --nav-bg: rgba(22, 20, 15, 0.85);
+  --nav-bg-solid: rgba(22, 20, 15, 0.97);
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
+.first-link{
+  margin-left:10px;
 
+}
 body, html {
   width: 100%;
   margin: 0;
@@ -26,6 +48,7 @@ body, html {
   font-family: 'IBM Plex Sans', system-ui, sans-serif;
   background: var(--paper);
   color: var(--ink);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -74,7 +97,7 @@ a {
 
 /* ── Navigation ── */
 .navbar-custom {
-  background: rgba(246, 241, 231, 0.9);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -97,9 +120,11 @@ a {
   font-family: 'Newsreader', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 600;
+  line-height: 1;
   color: var(--ink);
   letter-spacing: -0.01em;
   white-space: nowrap;
+  transform: translateY(3px);
 }
 
 .nav-menu {
@@ -109,9 +134,22 @@ a {
 }
 
 .navbar-logo {
-  height: 42px;
-  width: 42px;
+  height: 55px;
+  width: 55px;
   object-fit: contain;
+}
+
+/* ── Theme-aware logo swap ── */
+.theme-logo-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-logo-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-logo-dark {
+  display: block;
 }
 
 .nav-link-custom {
@@ -146,7 +184,63 @@ a {
 
 .nav-subscribe-btn:hover {
   background: var(--accent-strong);
-  transform: translateY(-1px);
+}
+
+/* ── Theme toggle ── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-right .nav-menu {
+  order: 1;
+}
+
+.nav-right .theme-toggle-btn {
+  order: 2;
+}
+
+.nav-right .nav-hamburger {
+  order: 3;
+}
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--ink);
+  border-color: var(--ink-faint);
+  background: var(--paper-soft);
+}
+
+.theme-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.theme-toggle-btn .icon-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle-btn .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle-btn .icon-moon {
+  display: block;
 }
 
 /* ── Layout ── */
@@ -394,7 +488,7 @@ a {
   color: var(--ink-muted);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .flow-diagram {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -538,6 +632,18 @@ a {
   border-radius: 6px;
 }
 
+.arch-img-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .arch-img-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .arch-img-dark {
+  display: block;
+}
+
 .arch-caption {
   color: var(--ink-faint);
   font-family: 'IBM Plex Mono', monospace;
@@ -661,7 +767,7 @@ a {
   letter-spacing: -0.01em;
   margin-bottom: 16px;
   flex-shrink: 0;
-  color: var(--paper);
+  color: #f6f1e7;
 }
 
 .avatar-sky    { background: #3d5a73; }
@@ -817,6 +923,14 @@ a {
   font-weight: 600;
 }
 
+:root[data-theme="dark"] .success-box {
+  color: #8fd6ab;
+}
+
+:root[data-theme="dark"] .error-msg {
+  color: #e28080;
+}
+
 .error-msg {
   display: none;
   color: #a13a3a;
@@ -924,7 +1038,7 @@ footer {
 }
 
 .footer-logo {
-  height: 40px;
+  height: 90px;
 }
 
 .footer-tagline {
@@ -994,7 +1108,7 @@ footer {
 }
 
 /* ── Responsive ── */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .nav-hamburger {
     display: flex;
   }
@@ -1007,7 +1121,7 @@ footer {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(246, 241, 231, 0.98);
+    background: var(--nav-bg-solid);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
